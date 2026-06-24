@@ -21,6 +21,7 @@ def test_kgu_failed_login(page: Page):
     # Тест занимается только проверками (assert)
     assert login_page.error_message.is_visible()
 
+@pytest.mark.skip(reason="Сайт КГУ блокирует запросы с IP-адресов GitHub (США)")
 def test_kgu_empty_login(page: Page):
     login_page = LoginPage(page)
     
