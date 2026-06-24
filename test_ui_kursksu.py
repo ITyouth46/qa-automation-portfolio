@@ -9,6 +9,7 @@ def browser_type_launch_args(browser_type_launch_args):
         "slow_mo": 1500,
     }
 
+@pytest.mark.skip(reason="Сайт КГУ блокирует запросы с IP-адресов GitHub (США)")
 def test_kgu_failed_login(page: Page):
     # Инициализируем страницу
     login_page = LoginPage(page)

@@ -3,12 +3,12 @@ import requests
 
 # Создаем фикстуру, которая возвращает базовый URL
 @pytest.fixture
-def base_url():
+def api_url():
     return "https://jsonplaceholder.typicode.com"
 
 # Передаем имя фикстуры прямо в аргументы теста! PyTest сам подставит туда значение
 def test_todo_status(base_url):
-    response = requests.get(f"{base_url}/todos/1")
+    response = requests.get(f"{api_url}/todos/1")
     data = response.json()
     assert response.status_code == 200
     assert data["completed"] == False

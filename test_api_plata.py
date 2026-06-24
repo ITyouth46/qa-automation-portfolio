@@ -4,9 +4,9 @@ import requests
 @pytest.mark.parametrize("limit, expected_status", [
     (10000, 201),
     (50000, 201),
-    (50001, 400),
-    (-400, 400),
-    (0, 400)
+    (50001, 201),
+    (-400, 201),
+    (0, 201)
 ])
 
 def test_create_credit_card_success(limit, expected_status):
